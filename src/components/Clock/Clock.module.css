@@ -1,0 +1,36 @@
+@keyframes slideInAndBounce {
+  0% {
+    transform: translateY(150%);
+  }
+  60%,
+  100% {
+    transform: translateY(0%);
+  }
+  65% {
+    transform: translateY(-5%);
+  }
+  85% {
+    transform: translateY(5%);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+
+  animation: slideInAndBounce 0.7s ease-out;
+}
+
+.clock {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 47px;
+  color: white;
+}
+
+.date {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: white;
+}
