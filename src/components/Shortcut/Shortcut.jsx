@@ -4,11 +4,17 @@ import { useEffect } from 'react';
 
 const Shorcut = () => {
   useEffect(() => {
-    axios.get('https://translate.google.com/').then(response => {
-      const data = load(response.data);
-      const iconLink = data('link[rel="icon"]').attr('href');
-      console.log(iconLink);
-    });
+    axios
+      .get('https://www.reddit.com/', {
+        headers: {
+          'Access-Control-Allow-Credentials': 'true',
+        },
+      })
+      .then(response => {
+        const data = load(response.data);
+        const iconLink = data('link[rel="icon"]').attr('href');
+        console.log(iconLink);
+      });
   });
 
   return (
