@@ -1,4 +1,5 @@
 import Background from '../components/Background/Background';
+import CentralContainer from '../components/CentralContainer/CentralContainer';
 import Clock from '../components/Clock/Clock';
 import PanelWallpapers from '../components/PanelWallpapers/PanelWallpapers';
 import Shorcut from '../components/Shortcut/Shortcut';
@@ -11,7 +12,10 @@ const Home = () => {
 
   return (
     <Background imageUrl={backgroundUrl}>
-      <Clock></Clock>
+      <CentralContainer>
+        <Clock></Clock>
+        <Shorcut></Shorcut>
+      </CentralContainer>
       <PanelWallpapers onBackgroundChange={setbackgroundUrl}></PanelWallpapers>
     </Background>
   );

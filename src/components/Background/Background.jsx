@@ -7,9 +7,7 @@ const Background = ({ children, imageUrl }) => {
       style={{
         backgroundImage: `url(${imageUrl})`,
       }}
-    >
-      <div className={styles.container}>{children}</div>
-    </div>
+    ></div>
   );
 };
 
