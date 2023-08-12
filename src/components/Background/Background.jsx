@@ -1,8 +1,13 @@
 import styles from './Background.module.css';
 
-const Background = ({ children }) => {
+const Background = ({ children, imageUrl }) => {
   return (
-    <div className={styles.backgroundImage}>
+    <div
+      className={styles.backgroundImage}
+      style={{
+        backgroundImage: `url(${imageUrl})`,
+      }}
+    >
       <div className={styles.container}>{children}</div>
     </div>
   );
