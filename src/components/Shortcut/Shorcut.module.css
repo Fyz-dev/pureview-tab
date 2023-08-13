@@ -1,0 +1,26 @@
+.container {
+  background-color: rgba(49, 49, 49, 0.9);
+  border: none;
+  border-radius: 15px;
+  height: 56px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
