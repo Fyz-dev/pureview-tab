@@ -1,8 +1,8 @@
 import Background from '../components/Background/Background';
 import CentralContainer from '../components/CentralContainer/CentralContainer';
 import Clock from '../components/Clock/Clock';
+import PanelShortcut from '../components/PanelShortcut/PanelShortcut';
 import PanelWallpapers from '../components/PanelWallpapers/PanelWallpapers';
-import Shorcut from '../components/Shortcut/Shortcut';
 import { useState } from 'react';
 
 const Home = () => {
@@ -14,8 +14,8 @@ const Home = () => {
     <Background imageUrl={backgroundUrl}>
       <CentralContainer>
         <Clock></Clock>
-        <Shorcut></Shorcut>
       </CentralContainer>
+      <PanelShortcut></PanelShortcut>
       <PanelWallpapers onBackgroundChange={setbackgroundUrl}></PanelWallpapers>
     </Background>
   );

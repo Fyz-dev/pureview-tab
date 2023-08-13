@@ -1,26 +1,33 @@
 import axios from 'axios';
 import { load } from 'cheerio';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import styles from './Shorcut.module.css';
 
-const Shorcut = () => {
-  useEffect(() => {
-    axios
-      .get('https://www.reddit.com/', {
-        headers: {
-          'Access-Control-Allow-Credentials': 'true',
-        },
-      })
-      .then(response => {
-        const data = load(response.data);
-        const iconLink = data('link[rel="icon"]').attr('href');
-        console.log(iconLink);
-      });
-  });
+const Shorcut = ({ url, iconLink }) => {
+  // const [iconLink, setIconLink] = useState();
+
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       'https://fonts.google.com/specimen/Work+Sans?preview.text=0000&preview.text_type=custom',
+  //       {},
+  //     )
+  //     .then(response => {
+  //       const data = load(response.data);
+  //       const iconLink = data('link[rel="icon"]').attr('href');
+  //       setIconLink(iconLink);
+  //     });
+  // });
 
   return (
-    <div>
-      <img></img>
-    </div>
+    <button
+      className={styles.container}
+      onClick={() => {
+        window.location.href = url;
+      }}
+    >
+      <img className={styles.icon} src={iconLink}></img>
+    </button>
   );
 };
 

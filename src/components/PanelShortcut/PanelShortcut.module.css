@@ -1,0 +1,14 @@
+.container {
+  background-color: rgba(44, 44, 44, 0.6);
+  backdrop-filter: blur(100px);
+
+  position: absolute;
+  display: inline-flex;
+  border-radius: 20px;
+  padding: 10px;
+  gap: 10px;
+
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
