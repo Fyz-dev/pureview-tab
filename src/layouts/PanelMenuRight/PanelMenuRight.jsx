@@ -1,12 +1,14 @@
+import ButtonSettings from './ButtonSettings/ButtonSettings';
 import PanelWallpapers from '../PanelWallpapers/PanelWallpapers';
 import styles from './PanelMenuRight.module.css';
 
-const PanelMenuRight = ({ onBackgroundChange }) => {
+const PanelMenuRight = ({ onBackgroundChange, openSetting }) => {
   return (
     <div className={styles['mainPanel']}>
       <PanelWallpapers
         onBackgroundChange={onBackgroundChange}
       ></PanelWallpapers>
+      <ButtonSettings openSetting={openSetting}></ButtonSettings>
     </div>
   );
 };

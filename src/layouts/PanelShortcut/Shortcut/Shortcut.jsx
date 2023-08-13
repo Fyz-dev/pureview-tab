@@ -2,6 +2,7 @@ import axios from 'axios';
 import { load } from 'cheerio';
 import { useEffect, useState } from 'react';
 import styles from './Shorcut.module.css';
+import Button from '../../../components/Button/Button';
 
 const Shorcut = ({ url, iconLink }) => {
   // const [iconLink, setIconLink] = useState();
@@ -20,14 +21,14 @@ const Shorcut = ({ url, iconLink }) => {
   // });
 
   return (
-    <button
+    <Button
       className={styles.container}
       onClick={() => {
         window.location.href = url;
       }}
     >
       <img className={styles.icon} src={iconLink}></img>
-    </button>
+    </Button>
   );
 };
 
