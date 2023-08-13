@@ -5,9 +5,7 @@ import styles from './PanelMenuRight.module.css';
 const PanelMenuRight = ({ onBackgroundChange, openSetting }) => {
   return (
     <div className={styles['mainPanel']}>
-      <PanelWallpapers
-        onBackgroundChange={onBackgroundChange}
-      ></PanelWallpapers>
+      <PanelWallpapers></PanelWallpapers>
       <ButtonSettings openSetting={openSetting}></ButtonSettings>
     </div>
   );
