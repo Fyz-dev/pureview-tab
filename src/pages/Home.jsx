@@ -1,6 +1,7 @@
 import Background from '../components/Background/Background';
 import CentralContainer from '../components/CentralContainer/CentralContainer';
 import Clock from '../components/Clock/Clock';
+import PanelSetting from '../layouts/PanelSettings/PanelSetting';
 import PanelShortcut from '../layouts/PanelShortcut/PanelShortcut';
 import PanelWallpapers from '../layouts/PanelWallpapers/PanelWallpapers';
 import { useState } from 'react';
@@ -17,6 +18,7 @@ const Home = () => {
       </CentralContainer>
       <PanelShortcut></PanelShortcut>
       <PanelWallpapers onBackgroundChange={setbackgroundUrl}></PanelWallpapers>
+      <PanelSetting></PanelSetting>
     </Background>
   );
 };
