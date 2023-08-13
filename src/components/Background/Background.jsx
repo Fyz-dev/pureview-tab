@@ -3,12 +3,13 @@ import styles from './Background.module.css';
 const Background = ({ children, imageUrl }) => {
   return (
     <div
-      className={styles.backgroundImage}
+      className={styles['background']}
       style={{
         backgroundImage: `url(${imageUrl})`,
       }}
-    ></div>
+    >
+      {children}
+    </div>
   );
 };
-
 export default Background;
