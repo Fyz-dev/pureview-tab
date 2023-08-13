@@ -2,6 +2,8 @@ import { useRef } from 'react';
 import styles from './PanelWallpapers.module.css';
 import { createClient } from 'pexels';
 
+// https://images.pexels.com/photos/17809448/pexels-photo-17809448.jpeg
+
 const PanelWallpapers = ({ onBackgroundChange }) => {
   async function randomPhotos(client) {
     try {
@@ -32,17 +34,15 @@ const PanelWallpapers = ({ onBackgroundChange }) => {
   };
 
   return (
-    <div className={styles['mainPanel']}>
-      <button
-        type="button"
-        className={styles['mainbutton']}
-        onClick={() => {
-          loadImage();
-        }}
-      >
-        Let's change
-      </button>
-    </div>
+    <button
+      type="button"
+      className={styles['mainbutton']}
+      onClick={() => {
+        loadImage();
+      }}
+    >
+      Let's change
+    </button>
   );
 };
 

@@ -1,14 +1,3 @@
-.mainPanel {
-  background-color: rgba(131, 150, 178, 0.2); /* Цвет фона с прозрачностью */
-  backdrop-filter: blur(10px); /* Эффект размытия (блюра) фона */
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px 0 0 5px;
-  position: fixed;
-  bottom: 20px;
-  right: 0;
-}
-
 .mainbutton {
   background-color: rgba(0, 0, 0, 0.25); /* Цвет фона с прозрачностью */
   border-radius: 10px 10px 10px 10px;
