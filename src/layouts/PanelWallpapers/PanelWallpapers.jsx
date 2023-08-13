@@ -1,10 +1,13 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import styles from './PanelWallpapers.module.css';
 import { createClient } from 'pexels';
+import backgroundImage from '../../utils/db/BackgroundImage';
 
 // https://images.pexels.com/photos/17809448/pexels-photo-17809448.jpeg
 
-const PanelWallpapers = ({ onBackgroundChange }) => {
+const PanelWallpapers = () => {
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
   async function randomPhotos(client) {
     try {
       const photo = await client.photos.random();
@@ -12,24 +15,19 @@ const PanelWallpapers = ({ onBackgroundChange }) => {
 
       return urlPhoto;
     } catch (error) {
-      console.error('Ошибка при поиске фотографий:', error);
+      console.error('Error while searching for photos:', error);
       return undefined;
     }
   }
 
   const loadImage = async () => {
     const client = createClient(import.meta.env.VITE_PEXEL_API_TOKEN);
-    var loaderImage = new Image();
 
-    // buttonRef.disabled = true;
+    setButtonDisabled(true);
     const urlImage = await randomPhotos(client);
-
     if (urlImage !== undefined) {
-      loaderImage.src = urlImage;
-      loaderImage.onload = function () {
-        onBackgroundChange(loaderImage.src);
-      };
-      // buttonRef.disabled = false;
+      backgroundImage.setUrlImage(urlImage);
+      setButtonDisabled(false);
     }
   };
 
@@ -37,6 +35,7 @@ const PanelWallpapers = ({ onBackgroundChange }) => {
     <button
       type="button"
       className={styles['mainbutton']}
+      disabled={buttonDisabled}
       onClick={() => {
         loadImage();
       }}
