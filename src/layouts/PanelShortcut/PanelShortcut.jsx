@@ -1,4 +1,4 @@
-import Shorcut from '../Shortcut/Shortcut';
+import Shorcut from './Shortcut/Shortcut';
 import styles from './PanelShortcut.module.css';
 
 const PanelShortcut = () => {

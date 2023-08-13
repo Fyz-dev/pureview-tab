@@ -1,8 +1,8 @@
 import Background from '../components/Background/Background';
 import CentralContainer from '../components/CentralContainer/CentralContainer';
 import Clock from '../components/Clock/Clock';
-import PanelShortcut from '../components/PanelShortcut/PanelShortcut';
-import PanelWallpapers from '../components/PanelWallpapers/PanelWallpapers';
+import PanelShortcut from '../layouts/PanelShortcut/PanelShortcut';
+import PanelWallpapers from '../layouts/PanelWallpapers/PanelWallpapers';
 import { useState } from 'react';
 
 const Home = () => {
