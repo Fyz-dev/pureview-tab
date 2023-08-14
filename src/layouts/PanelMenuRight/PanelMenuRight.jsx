@@ -3,7 +3,7 @@ import ButtonRandomWallpaper from './ButtonRandomWallpaper/ButtonRandomWallpaper
 import ButtonSettings from './ButtonSettings/ButtonSettings';
 import styles from './PanelMenuRight.module.css';
 
-const PanelMenuRight = ({ onBackgroundChange, openSetting }) => {
+const PanelMenuRight = ({ openSetting }) => {
   return (
     <Panel className={styles['mainPanel']}>
       <ButtonRandomWallpaper></ButtonRandomWallpaper>

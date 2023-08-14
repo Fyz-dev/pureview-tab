@@ -4,4 +4,7 @@
   border-bottom-right-radius: 0;
   bottom: 20px;
   right: 0;
+  display: inline-flex;
+
+  gap: 10px;
 }

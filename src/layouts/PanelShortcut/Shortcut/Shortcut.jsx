@@ -1,6 +1,6 @@
-import axios from 'axios';
-import { load } from 'cheerio';
-import { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import { load } from 'cheerio';
+// import { useEffect, useState } from 'react';
 import styles from './Shorcut.module.css';
 import Button from '../../../components/Button/Button';
 
