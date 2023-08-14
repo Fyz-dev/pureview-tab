@@ -16,7 +16,7 @@ const Home = () => {
       </CentralContainer>
       <PanelShortcut></PanelShortcut>
       <PanelMenuRight openSetting={setSettingIsOpen}></PanelMenuRight>
-      {settingIsOpen ? <PanelSetting></PanelSetting> : ''}
+      {settingIsOpen && <PanelSetting></PanelSetting>}
     </Background>
   );
 };

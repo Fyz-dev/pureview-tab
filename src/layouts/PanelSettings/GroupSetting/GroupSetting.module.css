@@ -1,0 +1,89 @@
+/*Стиль контейнера, когда раскрывается данный элемент*/
+.main-container-open {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/*Стандартный стиль кнопки*/
+.button {
+  background-color: transparent;
+  display: flex;
+  border: none;
+  padding: 10px;
+  padding-left: 15px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/*Стиль кнопки когда она закрыта*/
+.button-group-setting-close {
+  background-color: transparent;
+  display: flex;
+  border: none;
+  padding: 10px;
+  padding-left: 15px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.button-group-setting-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.text {
+  color: white;
+  font-size: 18px;
+}
+
+.icon {
+  color: white;
+  font-size: 18px;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+  transform: translateY(1px);
+  margin-left: auto;
+}
+
+/*Если у нас контейнер закрыт, то будет анимации появления стрелки*/
+.icon-anim-opacity {
+  color: transparent;
+  transition: color 0.3s ease-out;
+}
+
+.button-group-setting-close:hover .icon-anim-opacity {
+  color: white;
+}
+
+.container-children {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  padding-top: 0;
+  padding-left: 30px;
+}
+
+/*Анимки переворотов стрелок*/
+.flip-anim {
+  animation: flipAnimation 0.3s linear forwards;
+}
+
+.flip-anim-reverse {
+  animation: flipAnimationReverse 0.3s linear forwards;
+}
+
+@keyframes flipAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes flipAnimationReverse {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
