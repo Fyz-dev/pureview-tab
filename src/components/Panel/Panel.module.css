@@ -1,0 +1,18 @@
+.panel {
+  background-color: rgba(131, 150, 178, 0.2); /* Цвет фона с прозрачностью */
+  backdrop-filter: blur(10px); /* Эффект размытия (блюра) фона */
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 18px;
+  display: inline-flex;
+  gap: 10px;
+
+  /* background-color: rgba(44, 44, 44, 0.6);
+  backdrop-filter: blur(100px);
+
+  border-radius: 20px;
+  padding: 10px;
+  gap: 10px;
+
+  display: inline-flex; */
+}

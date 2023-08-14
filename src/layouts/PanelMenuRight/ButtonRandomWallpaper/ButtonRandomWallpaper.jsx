@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import styles from './PanelWallpapers.module.css';
 import { createClient } from 'pexels';
-import backgroundImage from '../../utils/db/BackgroundImage';
+import backgroundImage from '../../../utils/db/BackgroundImage';
+import Button from '../../../components/Button/Button';
+import styles from './ButtonRandomWallpaper.module.css';
 
 // https://images.pexels.com/photos/17809448/pexels-photo-17809448.jpeg
-
-const PanelWallpapers = () => {
+// https://images.pexels.com/photos/17542830/pexels-photo-17542830.jpeg
+const ButtonRandomWallpaper = () => {
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   async function randomPhotos(client) {
@@ -26,23 +27,30 @@ const PanelWallpapers = () => {
     setButtonDisabled(true);
     const urlImage = await randomPhotos(client);
     if (urlImage !== undefined) {
-      backgroundImage.setUrlImage(urlImage);
+      await backgroundImage.setUrlImage(urlImage);
       setButtonDisabled(false);
     }
   };
 
   return (
-    <button
+    <Button
       type="button"
-      className={styles['mainbutton']}
       disabled={buttonDisabled}
       onClick={() => {
         loadImage();
       }}
     >
-      Let's change
-    </button>
+      <span
+        className={`material-symbols-rounded ${styles['reload-icon']} ${
+          buttonDisabled
+            ? `${styles['rotation-run']}`
+            : `${styles['rotation-stop']}`
+        }`}
+      >
+        autorenew
+      </span>
+    </Button>
   );
 };
 
-export default PanelWallpapers;
+export default ButtonRandomWallpaper;

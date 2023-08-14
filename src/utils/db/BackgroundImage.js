@@ -10,24 +10,24 @@ class BackgroundImage {
     makeAutoObservable(this);
   }
 
-  async setUrlImage(imageUrl) {
+  setUrlImage(imageUrl) {
     // Проверка если не удалось загрузить картинку + предзагрузка
     let img = new Image();
 
-    img.onload = await (() => {
+    img.onload = () => {
       this.backgroundUrl = img.src;
       localStorage.setItem(StorageKeys.keyBackgroundUrl, img.src);
-    });
+    };
 
-    img.onerror = await (() => {
+    img.onerror = () => {
       this.backgroundUrl = this.backgroundUrlDef;
       localStorage.setItem(StorageKeys.keyBackgroundUrl, this.backgroundUrlDef);
-    });
+    };
 
-    img.onabort = await (() => {
+    img.onabort = () => {
       this.backgroundUrl = this.backgroundUrlDef;
       localStorage.setItem(StorageKeys.keyBackgroundUrl, this.backgroundUrlDef);
-    });
+    };
 
     img.src = imageUrl;
   }

@@ -1,9 +1,10 @@
 import Shorcut from './Shortcut/Shortcut';
 import styles from './PanelShortcut.module.css';
+import Panel from '../../components/Panel/Panel';
 
 const PanelShortcut = () => {
   return (
-    <div className={styles.container}>
+    <Panel className={styles.container}>
       <Shorcut
         url="https://github.com/"
         iconLink="https://github.githubassets.com/favicons/favicon-dark.svg"
@@ -16,7 +17,7 @@ const PanelShortcut = () => {
         url="https://fonts.google.com/specimen/Work+Sans?preview.text=0000&preview.text_type=custom"
         iconLink="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://fonts.google.com/&size=64"
       ></Shorcut>
-    </div>
+    </Panel>
   );
 };
 
