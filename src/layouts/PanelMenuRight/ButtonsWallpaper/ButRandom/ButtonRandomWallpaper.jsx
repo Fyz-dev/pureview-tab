@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styles from './ButtonRandomWallpaper.module.css';
 import Button from '../../../../components/Button/Button';
-import loaderImage from '../loaderImage';
+import loaderImage from '../../../PanelWallpapers/loaderImage';
 
 // https://images.pexels.com/photos/17809448/pexels-photo-17809448.jpeg
 // https://images.pexels.com/photos/17542830/pexels-photo-17542830.jpeg
@@ -24,7 +24,7 @@ const ButtonRandomWallpaper = () => {
       disabled={buttonDisabled}
       onClick={async () => {
         setButtonDisabled(true);
-        await loaderImage.loadImage();
+        await loaderImage.loadRandImage();
         setButtonDisabled(false);
       }}
     >
