@@ -1,18 +1,19 @@
 /*Стиль контейнера, когда раскрывается данный элемент*/
-.main-container-open {
+.button-when-open {
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 /*Стандартный стиль кнопки*/
 .button {
-  background-color: transparent;
   display: flex;
   border: none;
   padding: 10px;
   padding-left: 15px;
   width: 100%;
-  border-radius: 10px;
 }
 
 /*Стиль кнопки когда она закрыта*/
@@ -51,6 +52,18 @@
 
 .button-group-setting-close:hover .icon-anim-opacity {
   color: white;
+}
+
+.container-anim {
+  overflow: hidden;
+}
+
+.container-child-when-open {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .container-children {
