@@ -9,6 +9,6 @@
 }
 
 .button:hover {
-  background-color: rgba(49, 49, 49, 0.1);
+  background-color: rgba(49, 49, 49, 0.2);
   border-radius: 15px;
 }

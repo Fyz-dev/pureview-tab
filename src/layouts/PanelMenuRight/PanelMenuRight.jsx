@@ -4,12 +4,14 @@ import ButtonSettings from './ButtonSettings/ButtonSettings';
 import styles from './PanelMenuRight.module.css';
 import ButtonSettingWallpaper from './ButtonsWallpaper/ButSetting/ButtonSettingWallpaper';
 
-const PanelMenuRight = ({ openSetting }) => {
+const PanelMenuRight = ({ openPanelType }) => {
   return (
     <Panel className={styles['mainPanel']}>
       <ButtonRandomWallpaper></ButtonRandomWallpaper>
-      <ButtonSettingWallpaper></ButtonSettingWallpaper>
-      <ButtonSettings openSetting={openSetting}></ButtonSettings>
+      <ButtonSettingWallpaper
+        openPanelType={openPanelType}
+      ></ButtonSettingWallpaper>
+      <ButtonSettings openPanelType={openPanelType}></ButtonSettings>
     </Panel>
   );
 };

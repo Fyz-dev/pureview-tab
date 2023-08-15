@@ -1,14 +1,15 @@
 // import { useState } from 'react';
 import Button from '../../../components/Button/Button';
+import { PanelTypeEnum } from '../../../pages/Home';
 import styles from './ButtonSettings.module.css';
 
-const ButtonSettings = ({ openSetting }) => {
+const ButtonSettings = ({ openPanelType }) => {
   // const [isFlipped, setIsFlipped] = useState();
 
   return (
     <Button
       onClick={() => {
-        openSetting(true);
+        openPanelType(PanelTypeEnum.ALLSETTING);
       }}
     >
       <span

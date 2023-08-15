@@ -5,9 +5,16 @@ import Clock from '../components/Clock/Clock';
 import PanelMenuRight from '../layouts/PanelMenuRight/PanelMenuRight';
 import PanelSetting from '../layouts/PanelSettings/PanelSetting';
 import PanelShortcut from '../layouts/PanelShortcut/PanelShortcut';
+import PanelWallpapers from '../layouts/PanelWallpapers/PanelWallpapers';
+
+export const PanelTypeEnum = {
+  ALLSETTING: 'AllSetting',
+  BACKGROUND: 'Background',
+  NONE: 'None',
+};
 
 const Home = () => {
-  const [settingIsOpen, setSettingIsOpen] = useState(false);
+  const [panelType, setPanelType] = useState(PanelTypeEnum.NONE);
 
   return (
     <Background>
@@ -15,8 +22,11 @@ const Home = () => {
         <Clock></Clock>
       </CentralContainer>
       <PanelShortcut></PanelShortcut>
-      <PanelMenuRight openSetting={setSettingIsOpen}></PanelMenuRight>
-      {settingIsOpen && <PanelSetting></PanelSetting>}
+      <PanelMenuRight openPanelType={setPanelType}></PanelMenuRight>
+      {panelType === PanelTypeEnum.ALLSETTING && <PanelSetting></PanelSetting>}
+      {panelType === PanelTypeEnum.BACKGROUND && (
+        <PanelWallpapers></PanelWallpapers>
+      )}
     </Background>
   );
 };

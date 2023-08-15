@@ -1,5 +1,5 @@
-class keys {
+class StorageKeys {
   keyBackgroundUrl = 'actualBackgroundUrl';
 }
 
-export default keys;
+export default StorageKeys;
