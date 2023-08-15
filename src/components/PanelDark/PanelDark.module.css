@@ -1,5 +1,5 @@
 .panel {
-  /* background-color: rgba(131, 150, 178, 0.2); */
+  background-color: rgba(44, 44, 44, 0.8);
   backdrop-filter: blur(20px); /* Эффект размытия (блюра) фона */
   border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 18px;

@@ -1,8 +1,14 @@
 .button {
-  background-color: rgba(49, 49, 49, 0.9);
+  background-color: rgba(49, 49, 49, 0);
+  backdrop-filter: blur(20px);
   border: none;
   border-radius: 15px;
   height: 56px;
   width: 56px;
   cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(49, 49, 49, 0.1);
+  border-radius: 15px;
 }

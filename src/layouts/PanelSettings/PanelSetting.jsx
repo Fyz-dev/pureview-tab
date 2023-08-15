@@ -1,9 +1,10 @@
+import PanelDark from '../../components/PanelDark/PanelDark';
 import GroupSetting from './GroupSetting/GroupSetting';
 import styles from './PanelSetting.module.css';
 
 const PanelSetting = () => {
   return (
-    <div className={styles.container}>
+    <PanelDark className={styles.container}>
       <GroupSetting name="Clock">
         <div style={{ display: 'flex' }}>
           <span>Align:</span>
@@ -36,7 +37,7 @@ const PanelSetting = () => {
           ></button>
         </div>
       </GroupSetting>
-    </div>
+    </PanelDark>
   );
 };
 
