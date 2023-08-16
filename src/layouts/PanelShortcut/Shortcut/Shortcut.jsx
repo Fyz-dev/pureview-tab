@@ -26,6 +26,13 @@ const Shorcut = ({ url, iconLink }) => {
       onClick={() => {
         window.location.href = url;
       }}
+      onAuxClick={(e) => {
+        if (e.button === 1) {
+          // Проверка, что была нажата средняя кнопка мыши
+          e.preventDefault(); // Отменяем стандартное действие
+          window.open(url); // Открываем ссылку в новой вкладке
+        }
+      }}
     >
       <img className={styles.icon} src={iconLink}></img>
     </Button>

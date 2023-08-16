@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import Button from '../../../components/Button/Button';
+import ButtonSmall from '../../../components/ButtonSmall/ButtonSmall';
 import { PanelTypeEnum } from '../../../pages/Home';
 import styles from './ButtonSettings.module.css';
 
@@ -7,7 +7,7 @@ const ButtonSettings = ({ openPanelType }) => {
   // const [isFlipped, setIsFlipped] = useState();
 
   return (
-    <Button
+    <ButtonSmall
       onClick={() => {
         openPanelType(PanelTypeEnum.ALLSETTING);
       }}
@@ -18,7 +18,7 @@ const ButtonSettings = ({ openPanelType }) => {
       >
         settings
       </span>
-    </Button>
+    </ButtonSmall>
   );
 };
 

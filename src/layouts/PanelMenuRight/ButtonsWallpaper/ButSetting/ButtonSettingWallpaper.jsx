@@ -1,10 +1,10 @@
 import styles from './ButtonSettingWallpaper.module.css';
-import Button from '../../../../components/Button/Button';
 import { PanelTypeEnum } from '../../../../pages/Home';
+import ButtonSmall from '../../../../components/ButtonSmall/ButtonSmall';
 
 const ButtonSettingWallpaper = ({ openPanelType }) => {
   return (
-    <Button
+    <ButtonSmall
       onClick={() => {
         openPanelType(PanelTypeEnum.BACKGROUND);
       }}
@@ -12,7 +12,7 @@ const ButtonSettingWallpaper = ({ openPanelType }) => {
       <span className={`material-symbols-rounded ${styles['reload-icon']}`}>
         imagesmode
       </span>
-    </Button>
+    </ButtonSmall>
   );
 };
 

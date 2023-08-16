@@ -19,7 +19,7 @@ const PanelWallpapers = () => {
           placeholder="Search..."
           value={searchValue}
           onChange={handleInputChange}
-        />{' '}
+        />
         <button
           className={`material-symbols-rounded ${styles['button-search']}`}
           onClick={() => {

@@ -4,12 +4,12 @@
 
   position: absolute;
   width: 600px;
-  height: 300px;
+  height: 120px;
   gap: 5px;
 
   padding: 20px;
   right: 10px;
-  bottom: 286px; /* 276px */
+  bottom: 113px; /* 103px */
   margin: auto;
 
   animation: openAnim 0.8s ease-in-out;
@@ -29,7 +29,7 @@
   }
 }
 
-.search-panel {
+/* .search-panel {
   gap: 10px;
   display: inline-flex;
 }
@@ -42,8 +42,8 @@
   font-size: 16px;
   border: 2px solid rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 20px; /* Задаем скругление */
-  outline: none; /* Убираем контур при фокусе */
+  border-radius: 20px;
+  outline: none;
 }
 
 .search-bar::placeholder {
@@ -64,4 +64,4 @@
 .button-search:hover {
   background-color: rgba(230, 230, 230, 0.2);
   border-radius: 15px;
-}
+} */

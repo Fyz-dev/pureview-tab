@@ -2,6 +2,6 @@
   position: fixed;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  bottom: 20px;
+  bottom: 26px; /* 20px */
   right: 0;
 }

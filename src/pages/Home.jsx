@@ -6,6 +6,7 @@ import PanelMenuRight from '../layouts/PanelMenuRight/PanelMenuRight';
 import PanelSetting from '../layouts/PanelSettings/PanelSetting';
 import PanelShortcut from '../layouts/PanelShortcut/PanelShortcut';
 import PanelWallpapers from '../layouts/PanelWallpapers/PanelWallpapers';
+import PanelAboutWallpaper from '../layouts/PanelAboutWallpaper/PanelAboutWallpaper';
 
 export const PanelTypeEnum = {
   ALLSETTING: 'AllSetting',
@@ -16,16 +17,24 @@ export const PanelTypeEnum = {
 const Home = () => {
   const [panelType, setPanelType] = useState(PanelTypeEnum.NONE);
 
+  const setPanel = (valuePanelType) => {
+    if (panelType === PanelTypeEnum.NONE) setPanelType(valuePanelType);
+    else setPanelType(PanelTypeEnum.NONE);
+  };
+
   return (
     <Background>
       <CentralContainer>
         <Clock></Clock>
       </CentralContainer>
       <PanelShortcut></PanelShortcut>
-      <PanelMenuRight openPanelType={setPanelType}></PanelMenuRight>
+      <PanelMenuRight openPanelType={setPanel}></PanelMenuRight>
       {panelType === PanelTypeEnum.ALLSETTING && <PanelSetting></PanelSetting>}
       {panelType === PanelTypeEnum.BACKGROUND && (
-        <PanelWallpapers></PanelWallpapers>
+        <div>
+          <PanelWallpapers></PanelWallpapers>
+          <PanelAboutWallpaper></PanelAboutWallpaper>
+        </div>
       )}
     </Background>
   );
