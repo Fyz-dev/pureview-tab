@@ -16,6 +16,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
+  overflow: hidden;
 
   animation: openAnim 0.8s ease-in-out;
 }
