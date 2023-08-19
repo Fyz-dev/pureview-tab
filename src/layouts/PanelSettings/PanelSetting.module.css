@@ -1,24 +1,47 @@
 .container {
   display: flex;
   flex-direction: column;
-
   /* background-color: rgba(44, 44, 44, 0.8); */
   /* border-radius: 20px; */
-
   position: absolute;
-  width: 300px;
-  height: calc(100vh - 60px);
-  gap: 5px;
-
-  padding: 20px;
-
   right: 10px;
   top: 0;
   bottom: 0;
   margin: auto;
-  overflow: hidden;
+  width: 330px;
+  height: calc(100vh - 20px);
+
+  padding: 0;
 
   animation: openAnim 0.8s ease-in-out;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  gap: 5px;
+  margin: 20px;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+.content::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
 }
 
 @keyframes openAnim {

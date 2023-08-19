@@ -29,7 +29,9 @@ const Home = () => {
       </CentralContainer>
       <PanelShortcut></PanelShortcut>
       <PanelMenuRight openPanelType={setPanel}></PanelMenuRight>
-      {panelType === PanelTypeEnum.ALLSETTING && <PanelSetting></PanelSetting>}
+      {panelType === PanelTypeEnum.ALLSETTING && (
+        <PanelSetting openPanelType={setPanel}></PanelSetting>
+      )}
       {panelType === PanelTypeEnum.BACKGROUND && (
         <div>
           <PanelWallpapers></PanelWallpapers>
