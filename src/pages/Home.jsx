@@ -30,7 +30,7 @@ const Home = () => {
       <PanelShortcut></PanelShortcut>
       <PanelMenuRight openPanelType={setPanel}></PanelMenuRight>
       {panelType === PanelTypeEnum.ALLSETTING && (
-        <PanelSetting openPanelType={setPanel}></PanelSetting>
+        <PanelSetting closePanelType={setPanel}></PanelSetting>
       )}
       {panelType === PanelTypeEnum.BACKGROUND && (
         <div>

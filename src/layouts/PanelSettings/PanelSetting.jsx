@@ -5,8 +5,8 @@ import ElementShortcut from './ElementsSetting/ElementShortcut/ElementShortcut';
 import GroupSetting from './GroupSetting/GroupSetting';
 import styles from './PanelSetting.module.css';
 
-const PanelSetting = ({ openPanelType }) => {
-  const ref = useClickOutside(openPanelType, PanelTypeEnum.NONE);
+const PanelSetting = ({ closePanelType }) => {
+  const ref = useClickOutside(closePanelType, PanelTypeEnum.NONE);
 
   return (
     <PanelDark ref={ref} className={styles.container}>
