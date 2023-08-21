@@ -1,13 +1,13 @@
 import { createApi } from 'unsplash-js';
-import backgroundImage from '../../utils/db/BackgroundImage';
+import BackgroundObject from '../../utils/BackgroundImage';
 
 class LoaderImage {
   randomPhotos = async (client) => {
     try {
       const photo = await client.photos.getRandom();
-      const urlPhoto = photo['response']['urls']['full'];
+      // const urlPhoto = photo['urls']['full'];
 
-      return urlPhoto;
+      return photo['response'];
     } catch (error) {
       console.error('Error while searching for photos:', error);
       return undefined;
@@ -18,9 +18,9 @@ class LoaderImage {
     try {
       const photos = await client.search.getPhotos({ query: search });
       const photo = photos['response']['results'][0];
-      const urlPhoto = photo['urls']['full'];
+      // const urlPhoto = photo['urls']['full'];
 
-      return urlPhoto;
+      return photo;
     } catch (error) {
       console.error('Error while searching for photos:', error);
       return undefined;
@@ -39,7 +39,8 @@ class LoaderImage {
 
     const urlImage = await this.randomPhotos(client);
     if (urlImage !== undefined) {
-      await backgroundImage.setUrlImage(urlImage);
+      console.log(2);
+      BackgroundObject.setObjectJson(urlImage);
     }
   };
 
@@ -51,7 +52,7 @@ class LoaderImage {
 
     const urlImage = await this.searchPhotos(searchText, client);
     if (urlImage !== undefined) {
-      await backgroundImage.setUrlImage(urlImage);
+      BackgroundObject.setObjectJson(urlImage);
     }
   };
 }

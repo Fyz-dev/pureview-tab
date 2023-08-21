@@ -1,5 +1,5 @@
 import styles from './Background.module.css';
-import backgroundImage from '../../utils/db/BackgroundImage';
+import BackgroundObject from '../../utils/BackgroundImage';
 import { observer } from 'mobx-react-lite';
 
 const Background = observer(({ children }) => {
@@ -7,7 +7,7 @@ const Background = observer(({ children }) => {
     <div
       className={styles['background']}
       style={{
-        backgroundImage: `url(${backgroundImage.getUrlImage()})`,
+        backgroundImage: `url(${BackgroundObject.getFullImage()})`,
       }}
     >
       {children}
