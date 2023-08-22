@@ -3,6 +3,7 @@ import { useTransition, animated } from 'react-spring';
 import { observer } from 'mobx-react-lite';
 import BackgroundObject from '../../utils/BackgroundImage';
 import styles from './Background.module.css';
+import PrimaryColors from '../../utils/PrimaryColors';
 
 const Background = observer(({ children }) => {
   const [currentBackground, setBackground] = useState(0);
@@ -30,6 +31,7 @@ const Background = observer(({ children }) => {
       <div
         className={styles['background']}
         style={{
+          backgroundColor: `${PrimaryColors.getColor()}`,
           backgroundImage: `url(${lastBackground})`,
         }}
       />

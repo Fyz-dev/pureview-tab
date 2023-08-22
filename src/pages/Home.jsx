@@ -7,6 +7,7 @@ import PanelSetting from '../layouts/PanelSettings/PanelSetting';
 import PanelShortcut from '../layouts/PanelShortcut/PanelShortcut';
 import PanelWallpapers from '../layouts/PanelWallpapers/PanelWallpapers';
 import PanelAboutWallpaper from '../layouts/PanelAboutWallpaper/PanelAboutWallpaper';
+import { Toaster } from 'react-hot-toast';
 
 export const PanelTypeEnum = {
   ALLSETTING: 'AllSetting',
@@ -24,6 +25,7 @@ const Home = () => {
 
   return (
     <Background>
+      <Toaster position="top-center" reverseOrder={false} />
       <CentralContainer>
         <Clock></Clock>
       </CentralContainer>

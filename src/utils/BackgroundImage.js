@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction, toJS } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import { getSelectedImage, updateSelectedImage } from './db/ImagesStorage.js';
 
 const backgroundUrlDef =
@@ -10,10 +10,6 @@ class BackgroundObject {
   constructor() {
     makeAutoObservable(this);
     this.loadBackgroundFromBD();
-
-    // setInterval(() => {
-    //   console.log(toJS(this.backgroundObjectJson));
-    // }, 1000);
   }
 
   loadBackgroundFromBD = async () => {
@@ -32,19 +28,18 @@ class BackgroundObject {
     }
   };
 
+  // ----------------------------------
+  // -------- Export functions --------
+  // ----------------------------------
+
   setObjectJson(value) {
     this.backgroundObjectJson = value;
     updateSelectedImage(value);
   }
 
-  // getFullImage() {
-  //   console.log(toJS(this.backgroundObjectJson));
-  //   return this.backgroundObjectJson.urls.full;
-  // }
-
   async getFullImage() {
     return new Promise((resolve, reject) => {
-      console.log(toJS(this.backgroundObjectJson));
+      // console.log(toJS(this.backgroundObjectJson));
 
       let img = new Image();
 
