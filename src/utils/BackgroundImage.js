@@ -1,90 +1,63 @@
-import {
-  makeAutoObservable,
-  observable,
-  runInAction,
-  action,
-  toJS,
-} from 'mobx';
+import { makeAutoObservable, runInAction, toJS } from 'mobx';
 import { getSelectedImage, updateSelectedImage } from './db/ImagesStorage.js';
 
 const backgroundUrlDef =
   'https://images.hdqwalls.com/download/evening-landscape-minimal-4k-kl-3840x2400.jpg';
 
 class BackgroundObject {
-  backgroundObjectJson = null;
+  backgroundObjectJson = { urls: { full: null } };
 
   constructor() {
-    // this.loadUrlImageFromStorage();
-
     makeAutoObservable(this);
-
-    this.updateBackground();
-    // getSelectedImage().then(
-    //   runInAction((result) => {
-    //     if (result === null) {
-    //       this.backgroundObjectJson = { urls: { full: backgroundUrlDef } };
-    //     } else this.backgroundObjectJson = result;
-
-    //     console.log(123, backgroundUrlDef);
-    //   }),
-    // );
+    this.loadBackgroundFromBD();
 
     // setInterval(() => {
     //   console.log(toJS(this.backgroundObjectJson));
     // }, 1000);
   }
 
-  updateBackground = async () => {
+  loadBackgroundFromBD = async () => {
     try {
       const result = await getSelectedImage();
 
-      // runInAction(() => {
-      if (result === null) {
-        console.log(123, backgroundUrlDef);
-        // this.backgroundObjectJson = { urls: { full: backgroundUrlDef } };
-        runInAction(() => {
-          this.changeBackgroundObject(backgroundUrlDef);
-        });
-      } else {
-        console.log(423, backgroundUrlDef);
-        // this.backgroundObjectJson = result;
-        runInAction(() => {
-          this.changeBackgroundObject(result);
-        });
-      }
-      // });
+      runInAction(() => {
+        if (result === null) {
+          this.backgroundObjectJson = { urls: { full: backgroundUrlDef } };
+        } else {
+          this.backgroundObjectJson = result;
+        }
+      });
     } catch (error) {
       console.error('An error occurred:', error);
     }
   };
-
-  changeBackgroundObject(objectJson) {
-    this.backgroundObjectJson = objectJson;
-  }
-
-  // updateBackground = async () => {
-  //   await setInterval(() => {
-  //     runInAction(() => {
-  //       console.log(123);
-  //       this.backgroundObjectJson = { urls: { full: backgroundUrlDef } };
-  //     });
-  //   }, 1000);
-  // };
 
   setObjectJson(value) {
     this.backgroundObjectJson = value;
     updateSelectedImage(value);
   }
 
-  getFullImage() {
-    // if (
-    //   this.backgroundObjectJson !== null &&
-    //   !(this.backgroundObjectJson instanceof Promise)
-    // ) {
-    //   return this.backgroundObjectJson.urls.full;
-    // } else return this.backgroundUrlDef;
-    console.log(toJS(this.backgroundObjectJson));
-    return this.backgroundObjectJson.urls.full;
+  // getFullImage() {
+  //   console.log(toJS(this.backgroundObjectJson));
+  //   return this.backgroundObjectJson.urls.full;
+  // }
+
+  async getFullImage() {
+    return new Promise((resolve, reject) => {
+      console.log(toJS(this.backgroundObjectJson));
+
+      let img = new Image();
+
+      img.onload = () => {
+        resolve(img.src);
+      };
+
+      img.onerror = (error) => {
+        reject(error);
+      };
+
+      img.src = this.backgroundObjectJson.urls.full;
+    });
   }
 
   // setImage(imageJson) {

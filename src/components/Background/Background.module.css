@@ -1,3 +1,9 @@
+.background-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
 .background {
   position: fixed;
   width: 100%;
@@ -5,3 +11,16 @@
   background-size: cover;
   background-position: center;
 }
+
+/* .background-current {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
