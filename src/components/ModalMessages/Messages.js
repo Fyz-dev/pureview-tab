@@ -16,6 +16,17 @@ class Messages {
       // },
     });
   }
+
+  static SuccessMessage(text) {
+    toast.success(text, {
+      style: {
+        backgroundColor: PrimaryColors.getColor(),
+        color: PrimaryColors.getColorText(),
+        font: '1.2em monospace',
+        boxShadow: '5px 5px 10px 0px rgba(0, 0, 0, 0.3)',
+      },
+    });
+  }
 }
 
 export default Messages;

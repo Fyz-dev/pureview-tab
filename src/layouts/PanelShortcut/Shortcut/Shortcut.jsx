@@ -3,6 +3,7 @@
 // import { useEffect, useState } from 'react';
 import styles from './Shorcut.module.css';
 import Button from '../../../components/Button/Button';
+import Messages from '../../../components/ModalMessages/Messages';
 
 const Shorcut = ({ url, iconLink }) => {
   // const [iconLink, setIconLink] = useState();
@@ -29,6 +30,7 @@ const Shorcut = ({ url, iconLink }) => {
       onAuxClick={(e) => {
         if (e.button === 1) {
           // Проверка, что была нажата средняя кнопка мыши
+          Messages.SuccessMessage('Open Link!');
           e.preventDefault(); // Отменяем стандартное действие
           window.open(url); // Открываем ссылку в новой вкладке
         }
