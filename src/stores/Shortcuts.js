@@ -1,18 +1,31 @@
 import { makeAutoObservable } from 'mobx';
 
 class Shortcuts {
-  #isVisible = true;
+  _isVisible = true;
+  _shortcuts = [
+    'https://github.com/',
+    'https://chat.openai.com/',
+    'https://fonts.google.com/',
+  ];
 
   constructor() {
     makeAutoObservable(this);
   }
 
   get visible() {
-    return this.#isVisible;
+    return this._isVisible;
   }
 
   set visible(value) {
-    this.#isVisible = value;
+    this._isVisible = value;
+  }
+
+  get shortcuts() {
+    return this._shortcuts;
+  }
+
+  addShortcut(item) {
+    this.shortcuts.push(item);
   }
 }
 

@@ -1,0 +1,70 @@
+.container {
+  position: relative;
+  display: flex;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  padding: 5px;
+  gap: 5px;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.container:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  border-radius: 5px;
+}
+
+.icon-close {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+  font-size: 16px;
+  color: white;
+  margin-top: 1px;
+  margin-right: 1px;
+  transition: transform 0.5s;
+}
+
+.icon-close:hover {
+  transform: rotate(180deg);
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  transition: 0.3s;
+  align-self: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.container:hover .text {
+  color: rgba(255, 255, 255, 1);
+}
+
+.button-delete {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-color: red;
+  border: none;
+  border-bottom-left-radius: 3px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.container:hover .button-delete {
+  opacity: 1;
+}

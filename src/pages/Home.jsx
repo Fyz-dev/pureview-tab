@@ -7,6 +7,8 @@ import PanelSetting from '../layouts/PanelSettings/PanelSetting';
 import PanelShortcut from '../layouts/PanelShortcut/PanelShortcut';
 import PanelWallpapers from '../layouts/PanelWallpapers/PanelWallpapers';
 import PanelAboutWallpaper from '../layouts/PanelAboutWallpaper/PanelAboutWallpaper';
+import { observer } from 'mobx-react-lite';
+import Shortcuts from '../stores/Shortcuts';
 import { Toaster } from 'react-hot-toast';
 
 export const PanelTypeEnum = {
@@ -15,7 +17,7 @@ export const PanelTypeEnum = {
   NONE: 'None',
 };
 
-const Home = () => {
+const Home = observer(() => {
   const [panelType, setPanelType] = useState(PanelTypeEnum.NONE);
 
   const setPanel = (valuePanelType) => {
@@ -29,7 +31,7 @@ const Home = () => {
       <CentralContainer>
         <Clock></Clock>
       </CentralContainer>
-      <PanelShortcut></PanelShortcut>
+      {Shortcuts.visible && <PanelShortcut></PanelShortcut>}
       <PanelMenuRight openPanelType={setPanel}></PanelMenuRight>
       {panelType === PanelTypeEnum.ALLSETTING && (
         <PanelSetting closePanelType={setPanel}></PanelSetting>
@@ -42,6 +44,6 @@ const Home = () => {
       )}
     </Background>
   );
-};
+});
 
 export default Home;

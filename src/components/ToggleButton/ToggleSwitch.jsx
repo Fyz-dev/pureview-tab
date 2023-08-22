@@ -1,9 +1,8 @@
 import { useEffect, useRef } from 'react';
 import styles from './ToggleSwitch.module.css';
-
 //Закругление работают не динамически
 
-const ToggleSwitch = ({ isChecked, onChange }) => {
+const ToggleSwitch = ({ defaultChecked, onChange }) => {
   const switchRef = useRef(null);
 
   useEffect(() => {
@@ -17,7 +16,11 @@ const ToggleSwitch = ({ isChecked, onChange }) => {
 
   return (
     <label className={styles.switch} ref={switchRef}>
-      <input type="checkbox" checked={isChecked} onChange={onChange} />
+      <input
+        type="checkbox"
+        defaultChecked={defaultChecked}
+        onChange={onChange}
+      />
       <span className={styles.slider}></span>
     </label>
   );

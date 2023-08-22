@@ -76,6 +76,8 @@
 .container-children {
   display: flex;
   flex-direction: column;
+  gap: 5px;
+
   padding: 15px;
   padding-top: 0;
   padding-left: 30px;
