@@ -1,5 +1,5 @@
-import useClickOutside from '../../hooks/useClickOutSide';
-import { PanelTypeEnum } from '../../pages/Home';
+import useClickOutside from 'src/hooks/useClickOutside';
+import { PanelTypeEnum } from 'src/pages/Home';
 import PanelAboutWallpaper from './PanelAboutWallpaper/PanelAboutWallpaper';
 import PanelWallpapers from './PanelWallpapers/PanelWallpapers';
 

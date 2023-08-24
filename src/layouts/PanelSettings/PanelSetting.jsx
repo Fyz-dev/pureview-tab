@@ -1,6 +1,6 @@
-import PanelDark from '../../components/PanelDark/PanelDark';
-import useClickOutside from '../../hooks/useClickOutSide';
-import { PanelTypeEnum } from '../../pages/Home';
+import PanelDark from 'src/components/PanelDark/PanelDark';
+import { PanelTypeEnum } from 'src/pages/Home';
+import useClickOutside from 'src/hooks/useClickOutside';
 import ElementShortcut from './ElementsSetting/ElementShortcut/ElementShortcut';
 import GroupSetting from './GroupSetting/GroupSetting';
 import styles from './PanelSetting.module.css';

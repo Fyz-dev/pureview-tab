@@ -1,9 +1,6 @@
-// import axios from 'axios';
-// import { load } from 'cheerio';
-// import { useEffect, useState } from 'react';
+import Button from 'src/components/Button/Button';
+import Messages from 'src/components/ModalMessages/Messages';
 import styles from './Shorcut.module.css';
-import Button from '../../../components/Button/Button';
-import Messages from '../../../components/ModalMessages/Messages';
 
 const Shorcut = ({ url, iconLink }) => {
   // const [iconLink, setIconLink] = useState();

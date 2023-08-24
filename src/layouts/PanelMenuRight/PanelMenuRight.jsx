@@ -1,8 +1,8 @@
-import Panel from '../../components/Panel/Panel';
+import Panel from 'src/components/Panel/Panel';
 import ButtonRandomWallpaper from './ButtonsWallpaper/ButRandom/ButtonRandomWallpaper';
 import ButtonSettings from './ButtonSettings/ButtonSettings';
-import styles from './PanelMenuRight.module.css';
 import ButtonSettingWallpaper from './ButtonsWallpaper/ButSetting/ButtonSettingWallpaper';
+import styles from './PanelMenuRight.module.css';
 
 const PanelMenuRight = ({ openPanelType }) => {
   return (

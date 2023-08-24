@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import Panel from 'src/components/Panel/Panel';
+import loaderImage from 'src/layouts/PanelsWallpapers/loaderImage';
 import styles from './PanelWallpapers.module.css';
-import Panel from '../../../components/Panel/Panel';
-import loaderImage from '../loaderImage';
 
 const PanelWallpapers = () => {
   const [searchValue, setSearchValue] = useState('');

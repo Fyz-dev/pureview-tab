@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import styles from './GroupSetting.module.css';
 import { useSpring, animated } from 'react-spring';
+import styles from './GroupSetting.module.css';
 
 const GroupSetting = ({ name, children }) => {
   const [isOpen, setIsOpen] = useState(false);

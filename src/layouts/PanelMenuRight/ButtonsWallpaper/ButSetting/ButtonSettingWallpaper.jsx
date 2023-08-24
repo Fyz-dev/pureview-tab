@@ -1,6 +1,6 @@
+import { PanelTypeEnum } from 'src/pages/Home';
+import ButtonSmall from 'src/components/ButtonSmall/ButtonSmall';
 import styles from './ButtonSettingWallpaper.module.css';
-import { PanelTypeEnum } from '../../../../pages/Home';
-import ButtonSmall from '../../../../components/ButtonSmall/ButtonSmall';
 
 const ButtonSettingWallpaper = ({ openPanelType }) => {
   return (

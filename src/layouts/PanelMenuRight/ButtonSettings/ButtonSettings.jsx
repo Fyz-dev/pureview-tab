@@ -1,6 +1,6 @@
 // import { useState } from 'react';
-import ButtonSmall from '../../../components/ButtonSmall/ButtonSmall';
-import { PanelTypeEnum } from '../../../pages/Home';
+import ButtonSmall from 'src/components/ButtonSmall/ButtonSmall';
+import { PanelTypeEnum } from 'src/pages/Home';
 import styles from './ButtonSettings.module.css';
 
 const ButtonSettings = ({ openPanelType }) => {

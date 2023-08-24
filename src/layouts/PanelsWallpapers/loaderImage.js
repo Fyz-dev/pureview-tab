@@ -1,5 +1,5 @@
 import { createApi } from 'unsplash-js';
-import BackgroundObject from '../../utils/BackgroundImage';
+import BackgroundObject from 'src/utils/BackgroundImage';
 import loaderImageHandler from './loaderImageHandler';
 
 class LoaderImage {

@@ -1,9 +1,9 @@
-import styles from './ElementShortcut.module.css';
+import Shortcuts from 'src/stores/Shortcuts';
 import ItemShortcut from './ItemShortcut/ItemShortcut';
-import Shortcuts from '../../../../stores/Shortcuts';
 import AddShortcut from './AddShortcut/AddShortcut';
-import ToggleSwitch from '../../../../components/ToggleSwitch/ToggleSwitch';
+import ToggleSwitch from 'src/components/ToggleSwitch/ToggleSwitch';
 import { useState } from 'react';
+import styles from './ElementShortcut.module.css';
 
 const ElementShortcut = () => {
   const [buttonAddVisible, setButtonAddVisible] = useState(true);

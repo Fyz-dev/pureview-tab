@@ -1,4 +1,4 @@
-import Button from '../Button/Button';
+import Button from 'src/components/Button/Button';
 import styles from './ButtonSmall.module.css';
 
 const ButtonSmall = ({ children, className, ...rest }) => {

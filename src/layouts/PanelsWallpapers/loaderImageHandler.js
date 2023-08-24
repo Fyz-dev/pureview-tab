@@ -1,4 +1,4 @@
-import Messages from '../../components/ModalMessages/Messages';
+import Messages from 'src/components/ModalMessages/Messages';
 
 class LoaderImageHandler {
   handleMessError = (error) => {

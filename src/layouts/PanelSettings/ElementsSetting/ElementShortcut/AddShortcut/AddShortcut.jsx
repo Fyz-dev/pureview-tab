@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ToggleSwitch from '../../../../../components/ToggleSwitch/ToggleSwitch';
+import ToggleSwitch from 'src/components/ToggleSwitch/ToggleSwitch';
 import styles from './AddShortcut.module.css';
 
 const ButtonDialog = ({ onDone, onClose }) => (

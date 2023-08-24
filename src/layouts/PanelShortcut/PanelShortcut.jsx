@@ -1,8 +1,8 @@
+import { observer } from 'mobx-react-lite';
 import Shorcut from './Shortcut/Shortcut';
 import styles from './PanelShortcut.module.css';
-import Panel from '../../components/Panel/Panel';
-import Shortcuts from '../../stores/Shortcuts';
-import { observer } from 'mobx-react-lite';
+import Panel from 'src/components/Panel/Panel';
+import Shortcuts from 'src/stores/Shortcuts';
 
 const PanelShortcut = observer(() => {
   return (

@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import Background from '../components/Background/Background';
-import CentralContainer from '../components/CentralContainer/CentralContainer';
-import Clock from '../components/Clock/Clock';
-import PanelMenuRight from '../layouts/PanelMenuRight/PanelMenuRight';
-import PanelSetting from '../layouts/PanelSettings/PanelSetting';
-import PanelShortcut from '../layouts/PanelShortcut/PanelShortcut';
-import { observer } from 'mobx-react-lite';
-import Shortcuts from '../stores/Shortcuts';
 import { Toaster } from 'react-hot-toast';
-import PanelsWallpapers from '../layouts/PanelsWallpapers/PanelsWallpapers';
+import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import Background from 'src/components/Background/Background';
+import CentralContainer from 'src/components/CentralContainer/CentralContainer';
+import Clock from 'src/components/Clock/Clock';
+import PanelMenuRight from 'src/layouts/PanelMenuRight/PanelMenuRight';
+import PanelSetting from 'src/layouts/PanelSettings/PanelSetting';
+import PanelShortcut from 'src/layouts/PanelShortcut/PanelShortcut';
+import Shortcuts from 'src/stores/Shortcuts';
+import PanelsWallpapers from 'src/layouts/PanelsWallpapers/PanelsWallpapers';
 
 export const PanelTypeEnum = {
   ALLSETTING: 'AllSetting',

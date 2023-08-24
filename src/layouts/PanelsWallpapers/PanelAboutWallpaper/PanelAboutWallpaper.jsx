@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react-lite';
-import Panel from '../../../components/Panel/Panel';
-import BackgroundImage from '../../../utils/BackgroundImage';
+import Panel from 'src/components/Panel/Panel';
+import BackgroundImage from 'src/utils/BackgroundImage';
+import PrimaryColors from 'src/utils/PrimaryColors';
+import Messages from 'src/components/ModalMessages/Messages';
 import styles from './PanelAboutWallpaper.module.css';
-import PrimaryColors from '../../../utils/PrimaryColors';
-import Messages from '../../../components/ModalMessages/Messages';
 
 const PanelAboutWallpaper = observer(() => {
   const colorText = PrimaryColors.getColorText();

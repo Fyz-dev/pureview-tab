@@ -1,5 +1,5 @@
 import { toast } from 'react-hot-toast';
-import PrimaryColors from '../../utils/PrimaryColors';
+import PrimaryColors from 'src/utils/PrimaryColors';
 
 class Messages {
   static ErrorMessage(text) {

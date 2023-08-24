@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { observer } from 'mobx-react-lite';
-import BackgroundObject from '../../utils/BackgroundImage';
+import BackgroundObject from 'src/utils/BackgroundImage';
+import PrimaryColors from 'src/utils/PrimaryColors';
 import styles from './Background.module.css';
-import PrimaryColors from '../../utils/PrimaryColors';
 
 const Background = observer(({ children }) => {
   const [currentBackground, setBackground] = useState(0);

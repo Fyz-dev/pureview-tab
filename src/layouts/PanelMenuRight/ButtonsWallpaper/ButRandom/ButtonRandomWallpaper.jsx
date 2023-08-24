@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import loaderImage from 'src/layouts/PanelsWallpapers/loaderImage';
+import ButtonSmall from 'src/components/ButtonSmall/ButtonSmall';
 import styles from './ButtonRandomWallpaper.module.css';
-import loaderImage from '../../../PanelsWallpapers/loaderImage';
-import ButtonSmall from '../../../../components/ButtonSmall/ButtonSmall';
 
 // https://images.pexels.com/photos/17809448/pexels-photo-17809448.jpeg
 // https://images.pexels.com/photos/17542830/pexels-photo-17542830.jpeg
