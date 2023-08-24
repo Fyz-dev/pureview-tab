@@ -1,6 +1,6 @@
 .panel {
   /* background-color: rgba(131, 150, 178, 0.2); */
-  backdrop-filter: blur(20px); /* Эффект размытия (блюра) фона */
+  backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 18px;
   box-shadow: 6px 6px 15px 5px rgba(0, 0, 0, 0.1);

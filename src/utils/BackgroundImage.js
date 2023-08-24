@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from 'mobx';
+import { makeAutoObservable, runInAction, toJS } from 'mobx';
 import { getSelectedImage, updateSelectedImage } from './db/ImagesStorage.js';
 
 const backgroundUrlDef =
@@ -55,46 +55,49 @@ class BackgroundObject {
     });
   }
 
-  // setImage(imageJson) {
-  //   updateSelectedImage(imageJson);
-  //   console.log(imageJson);
-  //   const imageUrl = imageJson['urls']['full'];
+  getSmallImage() {
+    // console.log(toJS(this.backgroundObjectJson));
+    try {
+      return this.backgroundObjectJson.urls.thumb;
+    } catch (error) {
+      return undefined;
+    }
+  }
 
-  //   // Проверка если не удалось загрузить картинку + предзагрузка
-  //   let img = new Image();
+  //
+  // About Image...
 
-  //   img.onload = () => {
-  //     this.backgroundUrl = img.src;
-  //   };
+  getImageDescription() {
+    try {
+      return this.backgroundObjectJson.description;
+    } catch (error) {
+      return undefined;
+    }
+  }
 
-  //   img.onerror = () => {
-  //     this.backgroundUrl = this.backgroundUrlDef;
-  //   };
+  getImageLocation() {
+    try {
+      return this.backgroundObjectJson.location.name;
+    } catch (error) {
+      return undefined;
+    }
+  }
 
-  //   img.onabort = () => {
-  //     this.backgroundUrl = this.backgroundUrlDef;
-  //   };
+  getImageAuthor() {
+    try {
+      return this.backgroundObjectJson.user.name;
+    } catch (error) {
+      return undefined;
+    }
+  }
 
-  //   img.src = imageUrl;
-  // }
-
-  // getUrlImage() {
-  //   try {
-  //     return this.backgroundUrl;
-  //   } catch (error) {
-  //     console.log('Not found save Background image.');
-  //   }
-  // }
-
-  // loadUrlImageFromStorage() {
-  //   // Проверка если нету сохранённой картинки в DB или произошла ошибка при считывании
-  //   getSelectedImage().then((imageJson) => {
-  //     if (imageJson === null) throw 'Not found save Background image.';
-  //     this.backgroundUrl = imageJson['urls']['full'];
-  //   });
-  //   // updateSelectedImage(this.backgroundUrlDef);
-  //   // return this.backgroundUrlDef;
-  // }
+  getImageAuthorLink() {
+    try {
+      return this.backgroundObjectJson.user.links.html;
+    } catch (error) {
+      return undefined;
+    }
+  }
 }
 
 export default new BackgroundObject();

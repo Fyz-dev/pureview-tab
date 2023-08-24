@@ -1,6 +1,14 @@
 import Messages from '../../components/ModalMessages/Messages';
 
 class LoaderImageHandler {
+  handleMessError = (error) => {
+    if (error instanceof TypeError) {
+      return Messages.ErrorMessage("My apologies, I'm sorry 😔");
+    }
+
+    return Messages.ErrorMessage('Too many requests, can you wait a bit?!');
+  };
+
   randomPhotos = async (client) => {
     try {
       const photo = await client.photos.getRandom();
@@ -8,7 +16,8 @@ class LoaderImageHandler {
 
       return photo['response'];
     } catch (error) {
-      Messages.ErrorMessage('Too many requests, can you wait a bit?!');
+      console.log('errorPhoto', error);
+      this.handleMessError(error);
       return undefined;
     }
   };
@@ -16,12 +25,14 @@ class LoaderImageHandler {
   searchPhotos = async (search, client) => {
     try {
       const photos = await client.search.getPhotos({ query: search });
+
       const photo = photos['response']['results'][0];
       // const urlPhoto = photo['urls']['full'];
 
       return photo;
     } catch (error) {
-      Messages.ErrorMessage('Too many requests, can you wait a bit?!');
+      console.log('errorPhoto', error);
+      this.handleMessError(error);
       return undefined;
     }
   };

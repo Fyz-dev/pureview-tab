@@ -25,12 +25,13 @@ const Shorcut = ({ url, iconLink }) => {
     <Button
       className={styles.container}
       onClick={() => {
+        Messages.SuccessMessage('Opening link!');
         window.location.href = url;
       }}
       onAuxClick={(e) => {
         if (e.button === 1) {
           // Проверка, что была нажата средняя кнопка мыши
-          Messages.SuccessMessage('Open Link!');
+          Messages.SuccessMessage('Opening link in a new tab!');
           e.preventDefault(); // Отменяем стандартное действие
           window.open(url); // Открываем ссылку в новой вкладке
         }

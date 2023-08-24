@@ -25,7 +25,7 @@ class LoaderImage {
       fetch: fetch,
     });
 
-    const urlImage = await loaderImageHandler.randomPhotos(searchText, client);
+    const urlImage = await loaderImageHandler.searchPhotos(searchText, client);
     if (urlImage !== undefined) {
       BackgroundObject.setObjectJson(urlImage);
     }
