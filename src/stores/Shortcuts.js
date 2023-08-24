@@ -3,9 +3,21 @@ import { makeAutoObservable } from 'mobx';
 class Shortcuts {
   _isVisible = true;
   _shortcuts = [
-    'https://github.com/',
-    'https://chat.openai.com/',
-    'https://fonts.google.com/',
+    {
+      url: 'https://github.com/',
+      iconUrl:
+        'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://github.com/&size=64',
+    },
+    {
+      url: 'https://chat.openai.com/',
+      iconUrl:
+        'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://chat.openai.com/&size=64',
+    },
+    {
+      url: 'https://fonts.google.com/',
+      iconUrl:
+        'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://fonts.google.com/&size=64',
+    },
   ];
 
   constructor() {

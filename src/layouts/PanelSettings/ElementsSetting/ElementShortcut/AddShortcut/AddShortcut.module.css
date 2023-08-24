@@ -1,0 +1,113 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  gap: 5px;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.container-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.container-row {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.text {
+  color: white;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.text::after {
+  content: ':';
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  border-radius: 5px;
+}
+
+.input {
+  padding-left: 5px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  outline: none;
+  width: 100%;
+  height: auto;
+  transition: 0.3s;
+}
+
+.input::placeholder {
+  color: rgb(210, 209, 209);
+  font-size: 14px;
+}
+
+.input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/*Диалоговая кнопка*/
+.container-dialog {
+  display: inline-flex;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.button-done {
+  /* background-color: rgb(35, 197, 82); */
+  width: 100%;
+  height: auto;
+  border: none;
+  color: white;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.button-done:hover {
+  /* filter: brightness(1.1); */
+  background-color: rgb(35, 197, 82);
+}
+
+.button-close {
+  /* background-color: rgb(248, 79, 49); */
+  width: 100%;
+  height: auto;
+  border: none;
+  color: white;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.button-close:hover {
+  /* filter: brightness(1.1); */
+  background-color: rgb(248, 79, 49);
+}

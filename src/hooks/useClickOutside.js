@@ -1,21 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 const useClickOutside = (setPanel, value) => {
-  const [isComponentMounted, setIsComponentMounted] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) setPanel(value);
-    };
-
-    setIsComponentMounted(true);
-
-    if (isComponentMounted) {
-      document.addEventListener('click', handleClickOutside);
-      return () => document.removeEventListener('click', handleClickOutside);
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setPanel(value);
+      }
     }
-  }, [isComponentMounted, setPanel, value]);
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [setPanel, value, ref]);
 
   return ref;
 };

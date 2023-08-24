@@ -1,34 +1,43 @@
-import ToggleSwitch from '../../../../components/ToggleButton/ToggleSwitch';
-import Shortcuts from '../../../../stores/Shortcuts';
 import styles from './ElementShortcut.module.css';
 import ItemShortcut from './ItemShortcut/ItemShortcut';
+import Shortcuts from '../../../../stores/Shortcuts';
+import AddShortcut from './AddShortcut/AddShortcut';
+import ToggleSwitch from '../../../../components/ToggleSwitch/ToggleSwitch';
+import { useState } from 'react';
 
 const ElementShortcut = () => {
+  const [buttonAddVisible, setButtonAddVisible] = useState(true);
+
+  const toggleButtonVisibility = () => {
+    setButtonAddVisible(!buttonAddVisible);
+  };
+
+  const renderShortcuts = () => {
+    return Shortcuts.shortcuts.map((item, index) => (
+      <ItemShortcut
+        key={index}
+        url={item.url}
+        urlIcon={item.iconUrl}
+      ></ItemShortcut>
+    ));
+  };
+
   return (
     <>
       <div className={styles['container-element']}>
         <div className={styles['container-shortcuts']}>
-          <ItemShortcut
-            url="https://chat.openai.com/ettstsseres"
-            urlIcon="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://chat.openai.com/&size=64"
-          ></ItemShortcut>
+          {renderShortcuts()}
+          {buttonAddVisible ? (
+            <button
+              className={`${styles['button-for-itemAdd']} material-symbols-rounded`}
+              onClick={toggleButtonVisibility}
+            >
+              add
+            </button>
+          ) : (
+            <AddShortcut isHide={setButtonAddVisible}></AddShortcut>
+          )}
         </div>
-        {/* <span className={styles.text}>Url: </span>
-        <input
-          type="text"
-          placeholder="Enter the url"
-          className={styles.input}
-          value={urlValue}
-          onChange={(e) => setUrlValue(e.target.value)}
-        ></input>
-        <Button
-          className={`material-symbols-rounded ${styles.button}`}
-          onClick={() => {
-            Shortcuts.addShortcut(urlValue);
-          }}
-        >
-          add
-        </Button> */}
       </div>
       <div className={styles['container-element']}>
         <span className={styles.text}>Visible:</span>

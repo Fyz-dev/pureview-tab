@@ -10,7 +10,7 @@ const PanelSetting = ({ closePanelType }) => {
 
   return (
     <PanelDark ref={ref} className={styles.container}>
-      <div className={styles.content} ref={ref}>
+      <div className={styles.content}>
         <GroupSetting name="Shortcuts">
           <ElementShortcut></ElementShortcut>
         </GroupSetting>
