@@ -6,6 +6,11 @@ import styles from './PanelWallpapers.module.css';
 const PanelWallpapers = () => {
   const [searchValue, setSearchValue] = useState('');
 
+  // const searchImageGUI = (searchValue) => {
+  //   setSearchValue(searchValue);
+  //   loaderImage.loadSearchImage(searchValue);
+  // };
+
   const handleInputChange = (event) => {
     setSearchValue(event.target.value);
   };

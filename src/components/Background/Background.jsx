@@ -31,7 +31,7 @@ const Background = observer(({ children }) => {
       <div
         className={styles['background']}
         style={{
-          backgroundColor: `${PrimaryColors.getColor()}`,
+          backgroundColor: `${PrimaryColors.adaptivColorMain}`,
           backgroundImage: `url(${lastBackground})`,
         }}
       />

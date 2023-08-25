@@ -3,15 +3,19 @@ import BackgroundImage from './BackgroundImage';
 
 class PrimaryColors {
   // ----------------------------------
-  // -------- Export functions --------
+  // ------------- All Colors -----------
   // ----------------------------------
 
-  getColor() {
+  get adaptivColorMain() {
     return BackgroundImage.backgroundObjectJson.color;
   }
 
-  getColorText() {
+  get adaptivColorText() {
     return readableColor(BackgroundImage.backgroundObjectJson.color);
+  }
+
+  get colorText() {
+    return '#FFF';
   }
 }
 

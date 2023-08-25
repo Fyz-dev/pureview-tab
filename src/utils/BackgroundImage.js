@@ -98,6 +98,14 @@ class BackgroundObject {
       return undefined;
     }
   }
+
+  getImageTags() {
+    try {
+      return this.backgroundObjectJson.tags;
+    } catch (error) {
+      return undefined;
+    }
+  }
 }
 
 export default new BackgroundObject();
