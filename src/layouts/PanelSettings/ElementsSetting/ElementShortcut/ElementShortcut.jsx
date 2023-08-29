@@ -3,9 +3,10 @@ import ItemShortcut from './ItemShortcut/ItemShortcut';
 import AddShortcut from './AddShortcut/AddShortcut';
 import ToggleSwitch from 'src/components/ToggleSwitch/ToggleSwitch';
 import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
 import styles from './ElementShortcut.module.css';
 
-const ElementShortcut = () => {
+const ElementShortcut = observer(() => {
   const [buttonAddVisible, setButtonAddVisible] = useState(true);
 
   const toggleButtonVisibility = () => {
@@ -13,12 +14,8 @@ const ElementShortcut = () => {
   };
 
   const renderShortcuts = () => {
-    return Shortcuts.shortcuts.map((item, index) => (
-      <ItemShortcut
-        key={index}
-        url={item.url}
-        urlIcon={item.iconUrl}
-      ></ItemShortcut>
+    return Shortcuts.shortcuts.map((item) => (
+      <ItemShortcut key={item.id} objShortcut={item}></ItemShortcut>
     ));
   };
 
@@ -50,6 +47,6 @@ const ElementShortcut = () => {
       </div>
     </>
   );
-};
+});
 
 export default ElementShortcut;

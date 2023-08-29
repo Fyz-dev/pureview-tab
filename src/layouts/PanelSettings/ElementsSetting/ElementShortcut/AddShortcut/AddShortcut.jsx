@@ -1,10 +1,19 @@
 import { useState } from 'react';
 import ToggleSwitch from 'src/components/ToggleSwitch/ToggleSwitch';
 import styles from './AddShortcut.module.css';
+import Shortcuts from 'src/stores/Shortcuts';
+import getIconSite from 'src/utils/getIconSite';
+
+//////////////////////////////////////
+//   Need add validation for input  //
+//////////////////////////////////////
 
 const ButtonDialog = ({ onDone, onClose }) => (
-  <div onClick={onDone} className={styles['container-dialog']}>
-    <button className={`${styles['button-done']} material-symbols-rounded`}>
+  <div className={styles['container-dialog']}>
+    <button
+      onClick={onDone}
+      className={`${styles['button-done']} material-symbols-rounded`}
+    >
       done
     </button>
     <button
@@ -26,28 +35,51 @@ const InputRow = ({ label, onChange }) => (
 );
 
 const AddShortcut = ({ isHide }) => {
-  const [showIconUrl, setShowIconUrl] = useState(false);
+  const [isAutoDetected, setIsAutoDetected] = useState(true);
+  const [url, setUrl] = useState('');
+  const [urlIcon, setUrlIcon] = useState('');
 
-  const handleClose = () => isHide(true);
+  const handleDone = () => {
+    if (isAutoDetected) Shortcuts.addShortcut({ url: url });
+    else Shortcuts.addShortcut({ url: url, iconUrl: urlIcon });
+    isHide(true);
+  };
+
+  const handleClose = () => {
+    isHide(true);
+  };
+
+  const getIcon = () => (isAutoDetected ? getIconSite(url) || '' : urlIcon);
 
   return (
     <div className={styles['main-container']}>
       <div className={styles.container}>
-        <img className={styles.icon} src={'vite.svg'} alt="Icon" />
+        <img
+          className={styles.icon}
+          src={getIcon()}
+          onError={(e) => {
+            e.target.src = 'vite.svg';
+          }}
+        />
         <div className={styles['container-input']}>
-          <InputRow label="Site url" />
-          {showIconUrl && <InputRow label="Icon url" />}
+          <InputRow label="Site url" onChange={(e) => setUrl(e.target.value)} />
+          {!isAutoDetected && (
+            <InputRow
+              label="Icon url"
+              onChange={(e) => setUrlIcon(e.target.value)}
+            />
+          )}
 
           <div className={styles['container-row']}>
             <span className={styles.text}>Autodetect icon url</span>
             <ToggleSwitch
-              defaultChecked={!showIconUrl}
-              onChange={() => setShowIconUrl(!showIconUrl)}
+              defaultChecked={isAutoDetected}
+              onChange={() => setIsAutoDetected(!isAutoDetected)}
             />
           </div>
         </div>
       </div>
-      <ButtonDialog onClose={handleClose}></ButtonDialog>
+      <ButtonDialog onClose={handleClose} onDone={handleDone}></ButtonDialog>
     </div>
   );
 };

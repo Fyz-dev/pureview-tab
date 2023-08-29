@@ -44,12 +44,16 @@
 .icon {
   width: 32px;
   height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   border-radius: 5px;
+  background-size: contain;
+  background-position: center;
 }
 
 .input {

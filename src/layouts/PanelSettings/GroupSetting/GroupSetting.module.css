@@ -4,6 +4,7 @@
   border: none;
   padding: 10px;
   padding-left: 15px;
+  align-content: center;
   width: 100%;
 }
 
@@ -44,8 +45,8 @@
   color: white;
   font-size: 18px;
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
-  transform: translateY(1px);
   margin-left: auto;
+  align-self: center;
 }
 
 /*Если у нас контейнер закрыт, то будет анимации появления стрелки*/

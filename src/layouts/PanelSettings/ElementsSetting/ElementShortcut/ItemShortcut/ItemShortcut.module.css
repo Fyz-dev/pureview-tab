@@ -43,6 +43,7 @@
   font-size: 14px;
   transition: 0.3s;
   align-self: center;
+  white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
