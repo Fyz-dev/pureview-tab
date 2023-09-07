@@ -33,6 +33,7 @@
   background-color: transparent;
   color: transparent;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .main-container:hover .button-scroll:not(:disabled) {
@@ -44,5 +45,6 @@
 }
 
 .main-container:hover .button-scroll:disabled {
-  color: rgba(255, 255, 255, 0.1);
+  color: var(--color-secondary);
+  cursor: auto;
 }

@@ -20,8 +20,7 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 100px;
-  box-shadow: inset 2px 2px 5px rgba(16, 15, 15, 0.3),
-    inset -2px -2px 5px rgba(82, 82, 82, 0.3);
+  box-shadow: var(--box-shadow-setting-depth);
 }
 
 .slider:before {
@@ -36,7 +35,7 @@
   background-color: white;
   transition: 0.5s;
   border-radius: inherit;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-secondary);
 }
 
 .slider:active:before {
@@ -45,7 +44,7 @@
 
 input:checked + .slider:before {
   /* background-color: #cfff63; */
-  background-color: rgb(35, 197, 82);
+  background-color: var(--color-apply);
 }
 
 input:checked + .slider:before {

@@ -1,10 +1,10 @@
 .panel {
   background-color: rgba(44, 44, 44, 0.8);
-  backdrop-filter: blur(20px); /* Эффект размытия (блюра) фона */
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  border-radius: 18px;
-  box-shadow: 6px 6px 15px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px 15px;
+  backdrop-filter: var(--blur-main-panels); /* Эффект размытия (блюра) фона */
+  border: var(--border-thick);
+  border-radius: var(--border-radius-main-panels);
+  box-shadow: var(--box-shadow-primary);
+  padding: var(--padding-main-panels);
   display: inline-flex;
   gap: 10px;
 

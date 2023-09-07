@@ -5,7 +5,7 @@
   position: absolute;
   width: 600px;
   height: 300px;
-  gap: 5px;
+  gap: var(--gap-medium);
 
   padding: 20px;
   right: 10px;
@@ -38,30 +38,37 @@
   flex: 1;
   padding: 8px;
   padding-left: 20px;
-  color: rgb(255, 255, 255);
-  font-size: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-font-primary);
+  font-size: var(--font-size-medium);
+  border: var(--border-thick);
+  background-color: var(--color-input-background);
   border-radius: 20px; /* Задаем скругление */
   outline: none; /* Убираем контур при фокусе */
+  transition: 0.3s;
+}
+
+.search-bar:focus {
+  border: var(--border-thick-focus);
 }
 
 .search-bar::placeholder {
-  color: rgb(210, 209, 209);
-  font-size: 14px;
+  color: var(--color-input-placeholder);
+  font-size: var(--font-size-small);
 }
 
 .button-search {
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.1);
+  border: var(--border-thick);
+  background-color: var(--color-secondary);
   color: rgba(255, 255, 255, 0.75);
   border-radius: 20px;
   height: 40px;
   width: 40px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .button-search:hover {
   background-color: rgba(230, 230, 230, 0.2);
+  border: var(--border-thick-focus);
   border-radius: 15px;
 }

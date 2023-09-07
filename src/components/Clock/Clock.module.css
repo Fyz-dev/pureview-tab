@@ -18,19 +18,18 @@
   display: flex;
   flex-direction: column;
   margin-top: auto;
-
   animation: slideInAndBounce 0.7s ease-out;
 }
 
 .clock {
   font-family: 'Work Sans', sans-serif;
   font-size: 47px;
-  color: white;
+  color: var(--color-font-primary);
 }
 
 .date {
   font-family: 'Work Sans', sans-serif;
   font-size: 32px;
   font-weight: 300;
-  color: white;
+  color: var(--color-font-primary);
 }

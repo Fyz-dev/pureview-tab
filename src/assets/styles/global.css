@@ -5,3 +5,47 @@
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+}
+
+:root {
+  --color-secondary: rgba(255, 255, 255, 0.1);
+  --color-font-primary: white;
+
+  --color-apply: rgb(35, 197, 82);
+  --color-cancle: rgb(248, 79, 49);
+
+  --color-setting-hover: rgba(255, 255, 255, 0.1);
+  --color-setting-hover-intensive: rgba(255, 255, 255, 0.2);
+  --color-setting-text-inactive: rgba(255, 255, 255, 0.5);
+
+  --color-scrollbar-background: rgba(255, 255, 255, 0.1);
+  --color-scrollbar-background-hover: rgba(255, 255, 255, 0.2);
+
+  --color-input-background: var(--color-secondary);
+  --color-input-placeholder: rgb(210, 209, 209);
+
+  --color-border-primary: rgba(255, 255, 255, 0.25);
+  --color-border-focus: rgba(255, 255, 255, 0.5);
+
+  --box-shadow-primary: 6px 6px 15px 5px rgba(0, 0, 0, 0.2);
+  --box-shadow-setting-depth: inset 2px 2px 5px rgba(16, 15, 15, 0.3),
+    inset -2px -2px 5px rgba(82, 82, 82, 0.3);
+
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 18px;
+
+  --border-thin: 1px solid var(--color-border-primary);
+  --border-thin-focus: 1px solid var(--color-border-focus);
+  --border-thick: 2px solid var(--color-border-primary);
+  --border-thick-focus: 2px solid var(--color-border-focus);
+
+  --gap-medium: 5px;
+
+  --blur-main-panels: blur(20px);
+  --padding-main-panels: 10px 15px;
+  --border-radius-main-panels: 18px;
+}

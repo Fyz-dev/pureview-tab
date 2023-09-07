@@ -8,7 +8,7 @@
 
 .text {
   font-size: 0.7rem;
-  color: rgb(255, 255, 255);
+  color: var(--color-font-primary);
   white-space: nowrap;
   text-decoration: none;
 }

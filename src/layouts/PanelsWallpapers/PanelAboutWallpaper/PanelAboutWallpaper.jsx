@@ -68,7 +68,7 @@ const PanelAboutWallpaper = observer(() => {
           <span>{description}</span>
         </div>
         <div
-          className={styles['location-text']}
+          className={styles['text']}
           style={{ color: colorText }}
           onClick={openLocationLink}
           onAuxClick={(e) => {
@@ -85,7 +85,7 @@ const PanelAboutWallpaper = observer(() => {
           <span>{location}</span>
         </div>
         <div
-          className={styles['author-text']}
+          className={styles['text']}
           style={{ color: colorText }}
           onClick={openAuthorLink}
           onAuxClick={(e) => {

@@ -1,39 +1,37 @@
 .container-element {
   display: inline-flex;
   justify-content: flex-start;
-  gap: 5px;
+  gap: var(--gap-medium);
 }
 
 .container-shortcuts {
   display: flex;
   flex-direction: column;
-  box-shadow: inset 2px 2px 5px rgba(16, 15, 15, 0.3),
-    inset -2px -2px 5px rgba(82, 82, 82, 0.3);
+  box-shadow: var(--box-shadow-setting-depth);
   width: 100%;
   height: auto;
   border-radius: 15px;
   padding: 10px;
-  gap: 5px;
-
+  gap: var(--gap-medium);
   overflow: hidden;
 }
 
 .text {
-  color: white;
-  font-size: 18px;
+  color: var(--color-font-primary);
+  font-size: var(--font-size-medium);
 }
 
 /*Кнопка для добавления*/
 .button-for-itemAdd {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-setting-hover);
   height: auto;
   width: 100%;
-  color: white;
+  color: var(--color-font-primary);
   border: none;
   border-radius: 15px;
   transition: 0.3s;
 }
 
 .button-for-itemAdd:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-setting-hover-intensive);
 }

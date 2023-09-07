@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   height: auto;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-setting-hover);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -14,7 +14,7 @@
   width: auto;
   height: auto;
   padding: 5px;
-  gap: 5px;
+  gap: var(--gap-medium);
   transition: 0.3s;
   overflow: hidden;
 }
@@ -22,18 +22,18 @@
 .container-input {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: var(--gap-medium);
   width: 100%;
 }
 
 .container-row {
   display: inline-flex;
-  gap: 5px;
+  gap: var(--gap-medium);
 }
 
 .text {
-  color: white;
-  font-size: 14px;
+  color: var(--color-font-primary);
+  font-size: var(--font-size-small);
   white-space: nowrap;
 }
 
@@ -51,17 +51,17 @@
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  border-radius: 5px;
   background-size: contain;
   background-position: center;
+  border-radius: 5px;
 }
 
 .input {
   padding-left: 5px;
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-font-primary);
+  font-size: var(--font-size-small);
+  border: var(--border-thin);
+  background-color: var(--color-background-input);
   border-radius: 20px;
   outline: none;
   width: 100%;
@@ -70,12 +70,12 @@
 }
 
 .input::placeholder {
-  color: rgb(210, 209, 209);
-  font-size: 14px;
+  color: var(--color-input-placeholder);
+  font-size: var(--font-size-small);
 }
 
 .input:focus {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: var(--border-thin-focus);
 }
 
 /*Диалоговая кнопка*/
@@ -91,14 +91,14 @@
   width: 100%;
   height: auto;
   border: none;
-  color: white;
+  color: var(--color-font-primary);
   background-color: transparent;
   transition: 0.3s;
 }
 
 .button-done:hover {
   /* filter: brightness(1.1); */
-  background-color: rgb(35, 197, 82);
+  background-color: var(--color-apply);
 }
 
 .button-close {
@@ -106,12 +106,12 @@
   width: 100%;
   height: auto;
   border: none;
-  color: white;
+  color: var(--color-font-primary);
   background-color: transparent;
   transition: 0.3s;
 }
 
 .button-close:hover {
   /* filter: brightness(1.1); */
-  background-color: rgb(248, 79, 49);
+  background-color: var(--color-cancle);
 }

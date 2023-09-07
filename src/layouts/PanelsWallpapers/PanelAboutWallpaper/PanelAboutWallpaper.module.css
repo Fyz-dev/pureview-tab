@@ -59,24 +59,22 @@
   line-clamp: 1;
 }
 
-.location-text {
-  cursor: pointer;
-}
-
-.author-text {
+.text {
+  display: flex;
   cursor: pointer;
 }
 
 .body-icons {
   font-size: 1rem;
   margin: 0px 5px 0px 5px;
+  align-self: center;
 }
 
 .tag-list {
   display: flex;
   flex-direction: row;
   margin-top: 5px;
-  gap: 5px;
+  gap: var(--gap-medium);
   padding-bottom: 1px;
 
   overflow-x: auto;

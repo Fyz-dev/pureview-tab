@@ -5,13 +5,13 @@
   height: auto;
   border-radius: 10px;
   padding: 5px;
-  gap: 5px;
+  gap: var(--gap-medium);
   transition: 0.3s;
   overflow: hidden;
 }
 
 .container:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-setting-hover);
 }
 
 .icon {
@@ -26,12 +26,11 @@
 }
 
 .icon-close {
-  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
-  font-size: 16px;
-  color: white;
+  font-size: var(--font-size-setting-medium);
   margin-top: 1px;
   margin-right: 1px;
   transition: transform 0.5s;
+  color: var(--color-font-primary);
 }
 
 .icon-close:hover {
@@ -39,8 +38,8 @@
 }
 
 .text {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 14px;
+  color: var(--color-setting-text-inactive);
+  font-size: var(--font-size-small);
   transition: 0.3s;
   align-self: center;
   white-space: nowrap;
@@ -49,7 +48,7 @@
 }
 
 .container:hover .text {
-  color: rgba(255, 255, 255, 1);
+  color: var(--color-font-primary);
 }
 
 .button-delete {
@@ -59,7 +58,7 @@
   top: 0;
   width: 18px;
   height: 18px;
-  background-color: rgb(248, 79, 49);
+  background-color: var(--color-cancle);
   border: none;
   border-bottom-left-radius: 3px;
   opacity: 0;
