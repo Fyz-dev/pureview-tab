@@ -25,10 +25,35 @@ class LoaderImage {
       fetch: fetch,
     });
 
-    const urlImage = await loaderImageHandler.searchPhotos(searchText, client);
+    const urlImage = await loaderImageHandler.searchFirstPhoto(
+      searchText,
+      client,
+    );
     if (urlImage !== undefined) {
       BackgroundObject.setObjectJson(urlImage);
     }
+  };
+
+  searchImages = async (searchText) => {
+    const client = createApi({
+      accessKey: import.meta.env.VITE_UNSPLASH_API_TOKEN,
+      fetch: fetch,
+    });
+
+    return await loaderImageHandler.searchPhotos(searchText, 1, client);
+  };
+
+  searchImagesOnPage = async (searchText, pageNumber) => {
+    const client = createApi({
+      accessKey: import.meta.env.VITE_UNSPLASH_API_TOKEN,
+      fetch: fetch,
+    });
+
+    return await loaderImageHandler.searchPhotos(
+      searchText,
+      pageNumber,
+      client,
+    );
   };
 }
 

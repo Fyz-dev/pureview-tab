@@ -22,11 +22,30 @@ class LoaderImageHandler {
     }
   };
 
-  searchPhotos = async (search, client) => {
+  searchFirstPhoto = async (search, client) => {
     try {
       const photos = await client.search.getPhotos({ query: search });
 
       const photo = photos['response']['results'][0];
+      // const urlPhoto = photo['urls']['full'];
+
+      return photo;
+    } catch (error) {
+      console.log('errorPhoto', error);
+      this.handleMessError(error);
+      return undefined;
+    }
+  };
+
+  searchPhotos = async (search, page, client) => {
+    try {
+      const photos = await client.search.getPhotos({
+        query: search,
+        perPage: 28,
+        page: page,
+      });
+
+      const photo = photos['response']['results'];
       // const urlPhoto = photo['urls']['full'];
 
       return photo;
