@@ -1,11 +1,14 @@
+import { forwardRef } from 'react';
 import styles from './Panel.module.css';
 
-const Panel = ({ children, className, ...rest }) => {
+const Panel = forwardRef(({ children, className, ...rest }, ref) => {
   return (
-    <div className={`${styles.panel} ${className}`} {...rest}>
+    <div ref={ref} className={`${styles.panel} ${className}`} {...rest}>
       {children}
     </div>
   );
-};
+});
+
+Panel.displayName = 'Panel';
 
 export default Panel;

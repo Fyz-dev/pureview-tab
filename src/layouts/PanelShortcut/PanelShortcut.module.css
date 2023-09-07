@@ -1,7 +1,48 @@
-.container {
+.main-container {
   position: absolute;
-  padding: 10px;
+  display: flex;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  flex-wrap: wrap;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  /* bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); */
+  max-height: 56px;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  justify-content: center;
+}
+
+.container-button {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.button-scroll {
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  transition: 0.3s;
+}
+
+.main-container:hover .button-scroll:not(:disabled) {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.main-container:hover .button-scroll:not(:disabled):hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.main-container:hover .button-scroll:disabled {
+  color: rgba(255, 255, 255, 0.1);
 }

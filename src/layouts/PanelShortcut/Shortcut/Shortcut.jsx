@@ -34,7 +34,7 @@ const Shorcut = ({ url, iconLink }) => {
         }
       }}
     >
-      <img className={styles.icon} src={iconLink}></img>
+      <img loading="lazy" className={styles.icon} src={iconLink}></img>
     </Button>
   );
 };
