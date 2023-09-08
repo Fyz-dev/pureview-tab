@@ -10,6 +10,7 @@ const PanelWallpapers = () => {
   const [searchValue, setSearchValue] = useState(''); // Поисковый запрос
   const [imageListValue, setImageList] = useState(null); // Массив картинок
   const [searchPageValue, setSearchPage] = useState(1); // Страница результата (списка картинок)
+  const [maxPage, setMaxPage] = useState(1); // Количество (максимальная) страница результата
 
   const handleInputChange = (event) => {
     setSearchValue(event.target.value);
@@ -26,21 +27,24 @@ const PanelWallpapers = () => {
   };
 
   const clickSearch = async () => {
-    setSearchPage(1);
+    const page = 1;
+    setSearchPage(page);
+
     console.log('page: ', searchPageValue);
-    setImageList(
-      await loaderImage.searchImagesOnPage(searchValue, searchPageValue),
-    );
+    const answer = await loaderImage.searchImagesOnPage(searchValue, page);
+    setMaxPage(answer.total_pages);
+    console.log(answer.total_pages);
+    setImageList(answer.results);
   };
 
   const clickNextPage = async () => {
-    setSearchPage(searchPageValue + 1);
+    const page = searchPageValue + 1;
+    setSearchPage(page);
+
     console.log('page: ', searchPageValue);
-    setImageList(
-      imageListValue.concat(
-        await loaderImage.searchImagesOnPage(searchValue, searchPageValue),
-      ),
-    );
+    const answer = await loaderImage.searchImagesOnPage(searchValue, page);
+    setMaxPage(answer.total_pages);
+    setImageList(imageListValue.concat(answer.results));
   };
 
   const selectImage = useCallback(
@@ -74,12 +78,24 @@ const PanelWallpapers = () => {
       </div>
       <div className={styles['image-list-panel']}>
         {imageListValue && imageListValue.length > 0 ? (
-          <Gallery
-            photos={listPhotos()}
-            direction={'column'}
-            columns="4"
-            onClick={selectImage}
-          />
+          <div>
+            <Gallery
+              photos={listPhotos()}
+              direction={'column'}
+              columns="4"
+              onClick={selectImage}
+            />
+            {searchPageValue < maxPage && (
+              <div className={styles['shadow-image-panel']}>
+                <button
+                  className={styles['button-more-image']}
+                  onClick={clickNextPage}
+                >
+                  Load more
+                </button>
+              </div>
+            )}
+          </div>
         ) : (
           <span
             className={styles['image-message']}
@@ -89,9 +105,6 @@ const PanelWallpapers = () => {
           </span>
         )}
       </div>
-      {/* <div className={styles['navigation-panel']}>
-        <button onClick={clickNextPage}>next</button>
-      </div> */}
     </Panel>
   );
 };

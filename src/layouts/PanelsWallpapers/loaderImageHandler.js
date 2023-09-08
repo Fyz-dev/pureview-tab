@@ -45,7 +45,9 @@ class LoaderImageHandler {
         page: page,
       });
 
-      const photo = photos['response']['results'];
+      console.log('p', photos);
+
+      const photo = photos['response'];
       // const urlPhoto = photo['urls']['full'];
 
       return photo;
