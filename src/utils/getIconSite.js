@@ -1,4 +1,4 @@
-import isUrl from './validation/isUrl';
+import { isUrl } from './validations';
 
 const getIconSite = (url) => {
   if (isUrl(url))

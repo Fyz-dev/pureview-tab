@@ -1,4 +1,4 @@
-const isUrl = (url) => {
+export const isUrl = (url) => {
   try {
     if (new URL(url).origin === 'null') return false;
     return true;
@@ -6,5 +6,3 @@ const isUrl = (url) => {
     return false;
   }
 };
-
-export default isUrl;

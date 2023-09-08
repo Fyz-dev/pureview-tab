@@ -3,21 +3,6 @@ import Messages from 'src/components/ModalMessages/Messages';
 import styles from './Shorcut.module.css';
 
 const Shorcut = ({ url, iconLink }) => {
-  // const [iconLink, setIconLink] = useState();
-
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       'https://fonts.google.com/specimen/Work+Sans?preview.text=0000&preview.text_type=custom',
-  //       {},
-  //     )
-  //     .then(response => {
-  //       const data = load(response.data);
-  //       const iconLink = data('link[rel="icon"]').attr('href');
-  //       setIconLink(iconLink);
-  //     });
-  // });
-
   return (
     <Button
       className={styles.container}

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  padding-left: 5px;
+  color: var(--color-font-primary);
+  font-size: var(--font-size-small);
+  border: var(--border-thin);
+  background-color: var(--color-background-input);
+  border-radius: 20px;
+  outline: none;
+  width: 100%;
+  height: auto;
+  transition: 0.3s;
+}
+
+.input::placeholder {
+  color: var(--color-input-placeholder);
+  font-size: var(--font-size-small);
+}
+
+.input:focus {
+  border: var(--border-thin-focus);
+}
