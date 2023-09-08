@@ -8,7 +8,7 @@ import Tag from './Tag/Tag';
 
 const PanelAboutWallpaper = observer(() => {
   const fullTrim = (str) => {
-    return str !== null ? str.trim() : '';
+    return str != null ? str.trim() : '';
   };
 
   const adaptivColorText = PrimaryColors.adaptivColorText;

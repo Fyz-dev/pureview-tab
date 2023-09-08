@@ -44,6 +44,7 @@
   --border-thick-focus: 2px solid var(--color-border-focus);
 
   --gap-medium: 5px;
+  --gap-x-large: 15px;
 
   --blur-main-panels: blur(20px);
   --padding-main-panels: 10px 15px;
